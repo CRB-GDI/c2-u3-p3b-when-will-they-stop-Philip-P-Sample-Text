@@ -36,9 +36,34 @@ namespace ProgrammingAssignment2
 
 
 
-				// Don't add or modify any code below
-				// this comment
-				input = Console.ReadLine();
+				//These variables will store the numbers needed to perform the number count and average.
+				//The average will be calculated later, by dividing the sum of all numbers, with numberCount.
+				int numberCount = 0;
+				int numberSum = 0;
+				int value = GetValue();
+				decimal average = 0m;
+
+				//The GetValue method will update its value to the next number in the list when it is declared again.
+				//numberCount will be added every time the while loop loops.numberSum will add the current GetValue value to itself.
+				while (value != -1)
+				{
+					numberCount++;
+					numberSum += value;
+					value = GetValue();
+				}
+
+				//The average number calculation will only run when the number counter is greater than 0.
+				if (numberCount > 0)
+				{
+					average = (decimal)numberSum / (decimal)numberCount;
+                    Console.WriteLine();
+                    Console.WriteLine(numberCount + " " + average);
+                    Console.WriteLine();
+                }
+
+                // Don't add or modify any code below
+                // this comment
+                input = Console.ReadLine();
 			}
 		}
 
